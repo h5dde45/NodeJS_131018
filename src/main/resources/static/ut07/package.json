@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "production": "NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "nik p",
@@ -19,6 +20,14 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "file-loader": "^2.0.0",
+    "postcss-loader": "^3.0.0",
+    "svg-url-loader": "^2.3.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "img-loader": "^3.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.3",
+    "imagemin-webpack-plugin": "^2.3.0"
   }
 }
