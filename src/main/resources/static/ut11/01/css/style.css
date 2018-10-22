@@ -1,0 +1,24 @@
+body {
+    background: darkgrey;
+}
+
+.wrapper {
+    background: tan;
+    padding: 20px;
+}
+
+.slide-enter {
+    opacity: 0;
+}
+
+.slide-enter-active {
+    transition: opacity 1s;
+}
+
+.slide-leave-active {
+    transition: opacity 1s;
+}
+
+.slide-leave-to {
+    opacity: 0;
+}

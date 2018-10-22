@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="wrapper m-2">
+    <div class="sample">
+        <button class="btn btn-primary" v-on:click="showH2 = !showH2">
+            {{btnText}}
+        </button>
+        <hr>
+        <h2>asd, user</h2>
+        <hr>
+        <button class="btn btn-success"
+                @click="addNumber"
+                v-bind:disabled="done">Add
+        </button>
+        <hr>
+        <app-progress v-bind:val="sum"
+                      v-bind:max="maxNumbers * 5"></app-progress>
+        <hr>
+        <transition name="slide">
+            <h2 v-show="showH2" class="alert alert-primary">Sum: {{sum}}</h2>
+        </transition>
+        <hr>
+        <app-progress v-bind:val="numbers.length"
+                      v-bind:max="maxNumbers"></app-progress>
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item" v-for="number in numbers">
+                {{number}}
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
