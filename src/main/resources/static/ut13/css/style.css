@@ -1,0 +1,17 @@
+body{
+    background: darkgrey;
+    padding: 30px;
+}
+
+.layer{
+    transition: height 0.5s;
+}
+.layer-biscuit{
+    background: url("../img/biscuit.jpg");
+}
+.layer-beze{
+    background: url("../img/beze.jpg");
+}
+.layer-curd{
+    background: url("../img/curd.jpg");
+}
