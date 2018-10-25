@@ -1,0 +1,13 @@
+body {
+    background: darkgrey;
+}
+.animTarget{
+    /*display: none;*/
+}
+.fade-enter{
+    /*opacity: 0;*/
+}
+.fade-leave-active{
+    transition: opacity 1s;
+    opacity: 0;
+}
