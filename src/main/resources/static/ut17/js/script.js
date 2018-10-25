@@ -1,9 +1,13 @@
-let item = document.querySelector(".items .item");
+let items = document.querySelectorAll(".items .item");
 
-item.onclick=function () {
-    // this
-};
-activeItem();
-function activeItem() {
-    console.log(this);
+for(let i=0; i<items.length;i++) {
+    items[i].onclick = activeItem;
 }
+
+function activeItem() {
+    this.classList.toggle("item-active")
+}
+
+// setInterval(activeItem, 500);
+
+
