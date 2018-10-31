@@ -10,6 +10,8 @@
 </template>
 
 <script>
+  import ProductService from "./ProductService"
+
   export default{
     props: {
       product: {
@@ -25,7 +27,7 @@
     },
     methods: {
       viewDetailsClicked(){
-        this.$emit("viewDetails", this.product.id);
+        ProductService.viewDetails(this.product.id);
       }
     }
   }

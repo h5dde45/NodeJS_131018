@@ -8,12 +8,18 @@
 </template>
 
 <script>
+  import ProductService from "./ProductService"
+
   export default{
-    props: {
-      product: {
-        type: Object,
-        required: true
+    data(){
+      return {
+        product: {}
       }
+    },
+    created(){
+      ProductService.$on("viewDetailsSelect",  (selectedProduct) => {
+        this.product = selectedProduct;
+      })
     }
   }
 </script>
