@@ -1,23 +1,30 @@
 <template>
   <div>
-    <new-header></new-header>
+    <new-header>
+      <h1>First component ..</h1>
+    </new-header>
     <div class="container row ">
-      <products></products>
-      <product-details></product-details>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-  import ProductsList from "./ProductsList.vue"
-  import ProductDetails from "./ProductDetails.vue"
   import newHeader from "./Header.vue"
 
   export default {
+    data(){
+      return {
+        mode: "view"
+      }
+    },
     components: {
-      newHeader,
-      "products": ProductsList,
-      ProductDetails
+      newHeader
+    },
+    computed: {
+      componentName(){
+        return this.mode == "view" ? "ProductDetails" : "ProductAdd";
+      }
     }
   }
 </script>
@@ -27,4 +34,9 @@
     background: darkgray;
     padding: 20px;
   }
+
+  h2 {
+    color: red;
+  }
+
 </style>

@@ -1,17 +1,27 @@
 <template>
   <div>
-    <h1>First component ..</h1>
+    <div>
+      <slot></slot>
+    </div>
+    <div>
+      <slot  name="subtitle"></slot>
+    </div>
+    <div>
+      <slot  name="copyright">Asd new</slot>
+    </div>
   </div>
 </template>
 
 <script>
-  export default{
-  }
+  export default{}
 </script>
 
 <style scoped>
-  h1{
+  div {
     text-align: center;
+  }
+  h2{
+    color: green;
   }
 </style>
 

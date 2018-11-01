@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Finger+Paint');
+body {
+    background: darkgrey;
+    margin: 30px;
+}
+#newdiv{
+    text-align: center;
+    font: 5vw/100vh 'Finger Paint';
+}
