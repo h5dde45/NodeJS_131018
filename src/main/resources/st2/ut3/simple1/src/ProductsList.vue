@@ -15,14 +15,20 @@
   export default{
     data(){
       return {
-        products: []
+
+      }
+    },
+    computed:{
+      products(){
+          return this.$store.state.products;
       }
     },
     components: {
       ProductItem
     },
     created(){
-      this.products = ProductService.products;
+//      this.products = ProductService.products;
+      this.$store.commit("loadProducts", ProductService.products );
     }
   }
 </script>

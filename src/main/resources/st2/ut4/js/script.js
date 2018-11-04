@@ -1,15 +1,13 @@
-Vue.filter("toUppercase", function (value) {
-    return value.toUpperCase();
-});
-
 new Vue({
     el: "#app",
     data: {
-        text: "asd"
+        name: "asd",
+        checked: false
     },
-    filters: {
-        "reverse": function (value) {
-            return value.split("").reverse().join("");
-        }
+    config:{
+
+    },
+    methods:{
+
     }
 });
