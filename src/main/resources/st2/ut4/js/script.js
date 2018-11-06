@@ -1,61 +1,30 @@
+let one = Vue.component("greet", {
+    template: `
+<h2>{{title}}
+<button @click="ch">ch</button>
+</h2> 
+`,
+    data(){
+        return{
+            title:"asd"
+        }
+    },
+    methods:{
+        ch(){
+            this.title="fffffffffffffffff"
+        }
+    }
+});
+
 new Vue({
     el: "#app",
     data: {
-        tasks: [
-            {
-                text: "qwe",
-                isCompleted: false
-            },
-            {
-                text: "sad",
-                isCompleted: false
-            },
-            {
-                text: "zxc",
-                isCompleted: true
-            }
-        ],
-        currentTask: "",
-        editValue: "",
-        isEditing: false
+        title:"asd"
     },
     computed: {},
     methods: {
-        addTask(){
-            this.tasks.push({
-                text: this.currentTask,
-                isCompleted: false
-            });
-            this.currentTask = ""
-        },
-        removeTask(taskText){
-            this.tasks = this.tasks.filter(
-                task => {
-                    return task.text != taskText;
-                }
-            )
-        },
-        changeEdit(taskText){
-            this.editValue = taskText;
-            this.tasks = this.tasks.map(
-                task => {
-                    if (task.text === taskText) {
-                        task.isEditing = !task.isEditing
-                    }
-                    return task;
-                }
-            )
-        },
-        editTask(taskText){
-            this.tasks = this.tasks.map(
-                task => {
-                    if (task.text === taskText) {
-                        task.isEditing = !task.isEditing;
-                        task.text=this.editValue;
-                    }
-                    return task;
-                }
-            )
-        },
+        chng(){
+            this.title=this.$refs.input.value;
+        }
     }
 });

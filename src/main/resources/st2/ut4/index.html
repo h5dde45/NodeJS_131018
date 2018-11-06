@@ -11,22 +11,11 @@
 <body>
 
 <div id="app">
-    <ul>
-        <input type="text" @keyup.enter="addTask" v-model="currentTask">
-        <li v-for="task in tasks"
-            :class="{'strike':task.isCompleted}">
-            <input type="text" v-if="task.isEditing"
-                   @keyup.enter="editTask(task.text)"
-                   v-model="editValue">
-            <span @click="task.isCompleted=!task.isCompleted"
-                  v-else>
-                {{task.text}}</span>
-            <button @click="removeTask(task.text)">X</button>
-            <button @click="changeEdit(task.text)">edit</button>
-        </li>
-    </ul>
+    <h2>{{title}}</h2>
+    <input type="text" ref="input">
+    <button @click="chng">submit</button>
+    <p ref="par"></p>
 </div>
-
 
 <script src="js/script.js"></script>
 </body>

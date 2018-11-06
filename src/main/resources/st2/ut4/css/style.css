@@ -3,12 +3,3 @@ body {
     margin: 30px;
     font-size: 22px;
 }
-
-.strike {
-    text-decoration: line-through;
-    color: red;
-    font-weight: bold;
-}
-li{
-    cursor: pointer;
-}
