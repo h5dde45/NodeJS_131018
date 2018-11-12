@@ -1,46 +1,27 @@
 <template>
   <div id="app">
-    <component is="Aut"></component>
-    <!--<Aut></Aut>-->
-    <!--<Reg></Reg>-->
-    <!--<Header></Header>-->
-    <!--<h1>{{title}}</h1>-->
-    <!--<List :peaple="people" @message="displayMessage"></List>-->
+    <Slot>
+      <h2 slot="title">title for slot</h2>
+      <p slot="text">text for slot</p>
+    </Slot>
   </div>
 </template>
 
 <script>
-  import List from './components/List.vue'
-  import Header from './components/Header.vue'
-  import Aut from './components/Aut.vue'
-  import Reg from './components/Reg.vue'
+  import Slot from "./components/Slot.vue"
 
   export default {
     components: {
-      List,
-      Header,
-      Reg,
-      Aut
+      Slot
     },
     data(){
-      return {
-        title: "application",
-        people: ["qwe", "asd", "zxc"]
-      }
-    },
-    methods:{
-      displayMessage(data){
-          this.people.push(data);
-      }
+      return {}
     }
   }
 </script>
 
 <style>
-body{
-  background: darkgray;
-}
-  div{
-    display: flex;
+  body {
+    background: darkgray;
   }
 </style>
