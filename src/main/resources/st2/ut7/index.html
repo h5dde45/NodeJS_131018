@@ -8,10 +8,13 @@
 </head>
 <body>
 <div id="app">
-    <h2 @mouseover="newColor">{{title}} {{counter}}</h2>
-    <button @click="plus(5, $event)">+5</button>
-    <button @click="plus(10, $event)">+10</button>
-    <button @click="minus">-</button>
+    <h2>{{title}}</h2>
+    <button @click="title='new title'">new</button>
+</div>
+
+<div id="app2">
+    <h2>{{title}}</h2>
+    <button @click="update">new2</button>
 </div>
 
 <script src="script.js"></script>
