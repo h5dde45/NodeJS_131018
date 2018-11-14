@@ -8,8 +8,9 @@
 </head>
 <body>
 <div id="app">
-    <h2 @mouseover="newColor">{{counter}}</h2>
-    <button @click="plus">+</button>
+    <h2 @mouseover="newColor">{{title}} {{counter}}</h2>
+    <button @click="plus(5, $event)">+5</button>
+    <button @click="plus(10, $event)">+10</button>
     <button @click="minus">-</button>
 </div>
 
