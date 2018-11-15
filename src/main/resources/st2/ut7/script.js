@@ -3,17 +3,10 @@ let app = new Vue({
     data: {
         title: "Asd"
     },
-    methods: {},
-    computed: {}
-});
-let app2 = new Vue({
-    el: "#app2",
-    data: {
-        title: "Asd"
-    },
     methods: {
-        update(){
-            app.title = "zxc";
+        newTitle(){
+            this.title = "zxc";
+            console.log(this.$refs)
         }
     },
     computed: {}

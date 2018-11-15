@@ -8,13 +8,8 @@
 </head>
 <body>
 <div id="app">
-    <h2>{{title}}</h2>
-    <button @click="title='new title'">new</button>
-</div>
-
-<div id="app2">
-    <h2>{{title}}</h2>
-    <button @click="update">new2</button>
+    <h2 ref="heading">{{title}}</h2>
+    <button @click="newTitle">new</button>
 </div>
 
 <script src="script.js"></script>
