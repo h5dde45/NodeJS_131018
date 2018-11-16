@@ -1,21 +1,33 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <app-car></app-car>
+    <app-counter></app-counter>
+    <app-car :carName="carName"
+             :carYear="carYear"
+             :changeFunc="changeNTA"
+             @nameChanged="carName = $event"
+    ></app-car>
   </div>
 </template>
 
 <script>
   import Car from "./Car.vue";
+  import Counter from "./Counter.vue";
 
   export default {
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        carName: "1234",
+        carYear: 2011
       }
     },
     components: {
-      appCar: Car
+      appCar: Car,
+      appCounter: Counter
+    },
+    methods: {
+      changeNTA(){
+        this.carName = "aaaa"
+      }
     }
   }
 </script>
