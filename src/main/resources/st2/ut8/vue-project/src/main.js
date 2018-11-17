@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
-import ColorDirective from "./color";
+import Vuelidate from "vuelidate";
 
-Vue.filter("uppercase",(v) => v.toUpperCase());
+Vue.use(Vuelidate);
 
 new Vue({
   el: '#app',
