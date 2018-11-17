@@ -1,39 +1,40 @@
 <template>
   <div>
-    <app-counter></app-counter>
-    <app-car :carName="carName"
-             :carYear="carYear"
-             :changeFunc="changeNTA"
-             @nameChanged="carName = $event"
-    ></app-car>
+      <h2>{{title}}</h2>
+    <input type="text" v-model="searchName">
+      <ul>
+        <li v-for="name of filteredNames">{{name}}</li>
+      </ul>
   </div>
 </template>
 
 <script>
-  import Car from "./Car.vue";
-  import Counter from "./Counter.vue";
 
   export default {
-    data () {
+    data(){
       return {
-        carName: "1234",
-        carYear: 2011
+        title: "fEord",
+        names:['Ivan','Petr',"Dfgthg",'Xcv5tb'],
+        searchName:""
       }
     },
-    components: {
-      appCar: Car,
-      appCounter: Counter
+    computed:{
+        filteredNames(){
+            return this.names.filter(name => name.toLowerCase().
+            indexOf(this.searchName.toLowerCase()) != -1)
+        }
     },
-    methods: {
-      changeNTA(){
-        this.carName = "aaaa"
-      }
+    filters:{
+        lowercase(value){
+            return value.toLowerCase();
+        }
     }
   }
 </script>
 
-<style>
+<style >
   body {
     background: darkgray;
   }
+
 </style>

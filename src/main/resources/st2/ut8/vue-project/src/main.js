@@ -1,7 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
+import ColorDirective from "./color";
 
-export const eventEmitter = new Vue();
+Vue.filter("uppercase",(v) => v.toUpperCase());
 
 new Vue({
   el: '#app',
