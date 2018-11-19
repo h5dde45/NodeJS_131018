@@ -11,6 +11,14 @@
              id="year" v-model.number="carYear">
     </div>
     <button class="btn btn-success" @click="createCar">Create car</button>
+    <button class="btn btn-info" @click="loadCars">Load car</button>
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item"
+          v-for="car of cars"
+          :key="car.id">{{car.name}} -{{car.year}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -19,7 +27,9 @@
     data(){
       return {
         carName: "",
-        carYear: 2010
+        carYear: 2010,
+        cars: [],
+        resource: null
       }
     },
     methods: {
@@ -28,14 +38,22 @@
           name: this.carName,
           year: this.carYear
         };
-        this.$http.post('http://localhost:3000/cars', car)
-          .then(response=>{
-              return response.json()
+
+        this.resource.save({}, car)
+
+      },
+      loadCars(){
+        this.resource.get()
+          .then(response => {
+            return response.json()
           })
-          .then(newCar => {
-              console.log(newCar)
+          .then(cars => {
+            this.cars = cars
           })
       }
+    },
+    created(){
+      this.resource = this.$resource("cars")
     }
   }
 </script>
