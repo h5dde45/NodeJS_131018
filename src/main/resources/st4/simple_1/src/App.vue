@@ -1,25 +1,39 @@
 <template>
-  <div>
+  <div class="container">
     <new-header></new-header>
-    <greetings></greetings>
+    <products @viwDetails="viewDetails"></products>
+    <product-details :product="selectedProduct"></product-details>
   </div>
 </template>
 
 <script>
-  import Greetings from "./Greetings.vue";
+  import ProductsList from "./ProductsList.vue";
+  import ProductDetails from "./ProductDetails.vue";
   import Header from "./Header.vue";
 
   export default {
     components: {
-      Greetings,
-      'newHeader': Header
+      "products": ProductsList,
+      'newHeader': Header,
+      ProductDetails
+    },
+    data(){
+      return {
+        selectedProduct: {}
+      }
+    },
+    methods: {
+      viewDetails(product){
+        this.selectedProduct = product
+      }
     }
   }
 </script>
 
-<style>
+<style >
   body {
     background: darkgray;
     padding: 50px;
   }
+
 </style>

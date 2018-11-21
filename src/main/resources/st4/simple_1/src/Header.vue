@@ -1,7 +1,5 @@
 <template>
-  <div>
     <h1>New text</h1>
-  </div>
 </template>
 
 <script>
@@ -11,7 +9,7 @@
 </script>
 
 <style scoped>
-  div{
-    border: 2px solid red;
+  h1{
+    text-align: center;
   }
 </style>
