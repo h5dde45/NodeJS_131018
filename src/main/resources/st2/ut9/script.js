@@ -1,33 +1,18 @@
-Vue.component("comp_1", {
-    template: `<h1>zxc</h1>`
-});
-
 new Vue({
     el: "#app",
     data: {
-        name: "asd",
-        age: 34,
-        url: 'https://ya.ru/',
-        currentBook: 'newBook',
-        books: []
+        firstName: "",
+        secondName: "",
     },
     methods: {
-        changeName(){
-            this.name = "qwe"
-        },
-        addBook(){
-            this.books.push(this.currentBook)
+        submit(){
+            alert(this.fullname)
         }
     },
     computed: {
-        userInfo(){
-            this.age++;
-            return this.name + " - " + this.age
+        fullname(){
+            return this.firstName +" "+ this.secondName;
         }
     },
-    watch: {
-        name(){
-            // alert(this.name)
-        }
-    }
+    watch: {}
 });

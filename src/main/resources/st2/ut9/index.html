@@ -10,23 +10,24 @@
 </head>
 <body>
 <div id="app">
-    <div class="form-group">
-        <h1>hi {{name}}</h1>
-        <h1>{{userInfo}}</h1>
-        <h3><a :href="url" target="_blank">Home page</a></h3>
-        <button @click="changeName" class="btn btn-info">Name</button>
-        <hr>
-        <h4>Add book</h4>
-        <input type="text" v-model="currentBook" class="form-control mb-3">
-        <button @click="addBook" class="btn btn-success">Add</button>
-        <hr>
-        <ul class="list-group" v-if="books.length>0">
-            <li class="list-group-item active">
-                List Books</li>
-            <li class="list-group-item " v-for="book in books">
-                {{book}}</li>
-        </ul>
-        <comp_1></comp_1>
+    <div class="p-5">
+        <form>
+            <h2>Hi, {{firstName}} {{secondName}}..</h2>
+            <div class="form-group">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control"
+                       id="firstName" placeholder="firstName"
+                       v-model="firstName">
+            </div>
+            <div class="form-group">
+                <label for="secondName">Second name</label>
+                <input type="text" class="form-control"
+                       id="secondName" placeholder="secondName"
+                       v-model="secondName">
+            </div>
+            <button class="btn btn-success"
+            @click.prevent="submit">Submit</button>
+        </form>
     </div>
 </div>
 
