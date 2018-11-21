@@ -9,6 +9,8 @@
 </template>
 
 <script>
+  import ProductService from "./ProductService";
+
   export default {
     props: {
       product: {
@@ -18,7 +20,6 @@
       index: {
         type: Number,
       },
-      viewDetails: Function
     },
     data() {
       return {
@@ -28,8 +29,7 @@
     },
     methods: {
       viwDetails(){
-          this.viewDetails(this.product.id);
-//        this.$emit("viwDetails", this.product.id)
+        ProductService.viewDetails(this.product.id);
       }
     }
   }
@@ -37,7 +37,7 @@
 
 <style scoped>
   .card {
-    width: 500px;
+    width: 300px;
     border: 1px solid red;
     border-radius: 10px;
     margin: 10px;

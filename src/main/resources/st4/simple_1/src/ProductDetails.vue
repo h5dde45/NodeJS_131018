@@ -17,19 +17,26 @@
 </template>
 
 <script>
+  import ProductService from "./ProductService";
+
   export default {
-    props: {
-      product: {
-        type: Object,
-        required: true
+    data(){
+      return {
+        product: {}
       }
+    },
+    created()
+    {
+      ProductService.$on("viewDetails", (selectedProduct) => {
+        this.product = selectedProduct
+      });
     }
   }
 </script>
 
 <style scoped>
   .product {
-    width: 500px;
+    width: 300px;
     border: 1px solid red;
     border-radius: 10px;
     margin: 10px;

@@ -1,15 +1,26 @@
 <template>
-    <h1>New text</h1>
+  <div>
+    <div>
+      <slot></slot>
+    </div>
+    <div>
+      <slot name="subtitle"></slot>
+    </div>
+    <div>
+      <slot name="copyright">test 3</slot>
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {
-
-  }
+  export default {}
 </script>
 
 <style scoped>
-  h1{
+  div {
     text-align: center;
+  }
+  h2{
+    color: fuchsia;
   }
 </style>

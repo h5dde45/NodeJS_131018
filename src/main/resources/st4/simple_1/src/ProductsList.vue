@@ -2,55 +2,33 @@
   <div class="d3">
     <ProductItem v-for="(product,i) in products"
                  :key="product.id" :product="product"
-                 :index="i+1" :viewDetails="viewDetails">
+                 :index="i+1" >
     </ProductItem>
   </div>
 </template>
 
 <script>
   import ProductItem from "./ProductItem.vue";
-  import _ from "lodash";
+  import ProductService from "./ProductService";
 
   export default {
-    data() {
+    data(){
       return {
-        products: [
-          {
-            id: 1,
-            title: "p1",
-            price: 11,
-            gt: 111
-          },
-          {
-            id: 2,
-            title: "p2",
-            price: 22,
-            gt: 222
-          },
-          {
-            id: 3,
-            title: "p3",
-            price: 33,
-            gt: 333
-          },
-        ]
+        products: []
       }
     },
     components: {
       ProductItem
     },
-    methods: {
-      viewDetails(id){
-          let product=_.find(this.products,{id:id});
-        this.$emit("viwDetails", product)
-      }
+    created(){
+      this.products = ProductService.products
     }
   }
 </script>
 
 <style scoped>
-  .d3{
-    width: 500px;
+  .d3 {
+    width: 300px;
     float: left;
   }
 </style>
