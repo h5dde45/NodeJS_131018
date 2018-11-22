@@ -33,6 +33,7 @@
     methods: {
       addProduct(){
         ProductService.addProduct(this.product.title,this.product.price,this.product.gt);
+        this.$router.push('/')
       }
     }
   }

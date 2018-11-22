@@ -13,6 +13,7 @@
       <label>Quantity</label>
       <span>{{product.qt}}</span>
     </div>
+    <router-link :to="{name:'home'}">go to list</router-link>
   </div>
 </template>
 
@@ -30,6 +31,14 @@
       ProductService.$on("viewDetails", (selectedProduct) => {
         this.product = selectedProduct
       });
+    },
+    mounted(){
+        ProductService.viewDetails(this.$route.params.id)
+    },
+    watch:{
+        '$route.params.id'(id){
+          ProductService.viewDetails(this.$route.params.id)
+        }
     }
   }
 </script>

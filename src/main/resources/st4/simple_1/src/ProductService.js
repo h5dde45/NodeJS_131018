@@ -8,25 +8,25 @@ export default new Vue({
         id: 1,
         title: "p1",
         price: 11,
-        gt: 111
+        qt: 111
       },
       {
         id: 2,
         title: "p2",
         price: 22,
-        gt: 222
+        qt: 222
       },
       {
         id: 3,
         title: "p3",
         price: 33,
-        gt: 333
+        qt: 333
       },
     ]
   },
   methods: {
     viewDetails(id){
-      let product = _.find(this.products, {id: id});
+      let product = _.find(this.products, {id: parseInt(id)});
       this.$emit("viewDetails", product)
     },
     addProduct(title, price, qt){

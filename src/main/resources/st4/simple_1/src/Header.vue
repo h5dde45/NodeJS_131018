@@ -1,14 +1,6 @@
 <template>
   <div>
-    <div>
       <slot></slot>
-    </div>
-    <div>
-      <slot name="subtitle"></slot>
-    </div>
-    <div>
-      <slot name="copyright">test 3</slot>
-    </div>
   </div>
 </template>
 
@@ -19,8 +11,5 @@
 <style scoped>
   div {
     text-align: center;
-  }
-  h2{
-    color: fuchsia;
   }
 </style>

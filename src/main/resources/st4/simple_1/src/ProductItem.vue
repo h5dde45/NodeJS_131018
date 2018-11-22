@@ -29,7 +29,9 @@
     },
     methods: {
       viwDetails(){
-        ProductService.viewDetails(this.product.id);
+//        ProductService.viewDetails(this.product.id);
+        this.$router.push('/detail/'+this.product.id)
+
       }
     }
   }

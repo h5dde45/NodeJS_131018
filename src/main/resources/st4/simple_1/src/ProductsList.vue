@@ -1,5 +1,6 @@
 <template>
   <div class="d3">
+    <router-link to="/add" class="btn btn-info">Add product</router-link>
     <ProductItem v-for="(product,i) in products"
                  :key="product.id" :product="product"
                  :index="i+1" >
